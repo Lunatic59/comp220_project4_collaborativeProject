@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class VigenereCipher {
+public class VigenereCipher extends Cipher{
 	
 	private ArrayList<CaesarCipher> subCiphers;
 	
@@ -29,7 +29,8 @@ public class VigenereCipher {
 	public char encrypt(char c) {
 		char res = subCiphers.get(nextIndexForEncrypt).encrypt(c);
 		nextIndexForEncrypt = (nextIndexForEncrypt + 1) % subCiphers.size();
-		return res;
+        c = res;
+		return c;
 	}
 
 	@Override

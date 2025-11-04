@@ -11,6 +11,7 @@ public class CaesarCipher extends Cipher{
 	}
 	
 	public CaesarCipher(CaesarCipher other){
+        //TODO MAKE THIS
 	}
 	
 	@Override

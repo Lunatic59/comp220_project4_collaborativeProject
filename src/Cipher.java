@@ -3,7 +3,15 @@ public abstract class Cipher {
 
     public abstract char decrypt (char c);
 
-    public abstract String encrypt (String s);
+    public String encrypt (String s) {
 
-    public abstract String decrypt (String s);
+        return s;
+    }
+
+    public String decrypt (String s) {
+
+        return s;
+    }
+
+    public abstract Cipher newCopy();
 }

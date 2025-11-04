@@ -1,2 +1,2 @@
-public class CompositionCipher {
+public class CompositionCipher extends Cipher{
 }

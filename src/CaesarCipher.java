@@ -7,11 +7,10 @@ public class CaesarCipher extends Cipher{
 	 * @param amt - the distance to shift letters when encrypting
 	 */
 	public CaesarCipher(int amt){
-		shiftAmount = amt;
+		this.shiftAmount = amt;
 	}
 	
 	public CaesarCipher(CaesarCipher other){
-		// TODO: complete this copy constructor
 	}
 	
 	@Override

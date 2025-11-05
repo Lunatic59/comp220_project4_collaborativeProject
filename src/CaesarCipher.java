@@ -10,9 +10,9 @@ public class CaesarCipher extends Cipher{
 		this.shiftAmount = amt;
 	}
 	
-	public CaesarCipher(CaesarCipher other){
-        //TODO MAKE THIS
-	}
+	public CaesarCipher(CaesarCipher other) {
+        this.shiftAmount = other.shiftAmount;
+    }
 	
 	@Override
 	public char encrypt(char c) {

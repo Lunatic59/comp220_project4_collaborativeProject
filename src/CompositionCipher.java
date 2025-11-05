@@ -4,27 +4,36 @@ public class CompositionCipher extends Cipher{
     private ArrayList<Cipher> ciphers = new ArrayList<>();
 
     public CompositionCipher() {
-        //TODO complete
+        //TODO discuss with ben. couldn't see anything wrong with this.
     }
 
+    //should be complete
     public CompositionCipher( CompositionCipher other) {
-        //TODO complete this method
+        this.ciphers = new ArrayList<>(other.ciphers);
     }
 
+    // I think this is good
+    @Override
     public Cipher newCopy() {
-        //TODO complete this method
-        return null;
+        return new CompositionCipher(this);
     }
 
+    //should be done
     @Override
     public char encrypt(char c) {
-        //TODO complete
+        for (int i = 0; i < ciphers.size(); i++) {
+           c = ciphers.get(i).encrypt(c);
+        }
+
         return c;
     }
 
     @Override
     public char decrypt(char c) {
-        //TODO complete this method
+        for (int i = (ciphers.size() - 1); i >= 0; i--) {
+           c = ciphers.get(i).decrypt(c);
+        }
+
         return  c;
     }
 

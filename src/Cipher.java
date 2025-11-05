@@ -1,4 +1,5 @@
 public abstract class Cipher {
+
     public abstract char encrypt( char c);
 
     public abstract char decrypt (char c);

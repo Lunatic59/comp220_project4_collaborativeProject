@@ -9,13 +9,15 @@ public class CompositionCipher extends Cipher{
 
     //should be complete
     public CompositionCipher( CompositionCipher other) {
-        this.ciphers = new ArrayList<>(other.ciphers);
+        for (int i = 0; i < other.ciphers.size(); i++) {
+            this.ciphers.add(other.ciphers.get(i).newCopy());
+        }
     }
 
     // I think this is good
     @Override
     public Cipher newCopy() {
-        return new CompositionCipher(this);
+        return (new CompositionCipher(this));
     }
 
     //should be done

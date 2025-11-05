@@ -22,7 +22,7 @@ public class CompositionCipher extends Cipher{
     @Override
     public char encrypt(char c) {
         for (int i = 0; i < ciphers.size(); i++) {
-           c = ciphers.get(i).encrypt(c);
+           c = this.ciphers.get(i).encrypt(c);
         }
 
         return c;
@@ -31,7 +31,7 @@ public class CompositionCipher extends Cipher{
     @Override
     public char decrypt(char c) {
         for (int i = (ciphers.size() - 1); i >= 0; i--) {
-           c = ciphers.get(i).decrypt(c);
+           c = this.ciphers.get(i).decrypt(c);
         }
 
         return  c;

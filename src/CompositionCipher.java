@@ -42,6 +42,6 @@ public class CompositionCipher extends Cipher{
     public void add(Cipher theCipher) {
         //TODO complete, error checking and such i think
 
-        this.ciphers.add(theCipher);
+        this.ciphers.add(theCipher.newCopy());
     }
 }

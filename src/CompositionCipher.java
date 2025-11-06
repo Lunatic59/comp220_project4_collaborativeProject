@@ -5,7 +5,7 @@
  *
  * @author Hayden Califf & Ben Obman
  * @version 1.0
- * @since 2025-11-05
+ * @since 2025-5-05
  */
 import java.util.ArrayList;
 
@@ -19,7 +19,6 @@ public class CompositionCipher extends Cipher{
      * Constructor for the CompositionCipher class
      */
     public CompositionCipher() {
-        //TODO discuss with ben. couldn't see anything wrong with this.
     }
 
     /**
@@ -35,7 +34,7 @@ public class CompositionCipher extends Cipher{
 
     /**
      *
-     * @return a copy of the CompositionCipher
+     * @return a copy of the CompositionCipher using the method
      */
     @Override
     public Cipher newCopy() {
@@ -76,8 +75,6 @@ public class CompositionCipher extends Cipher{
      * @param theCipher the Cipher to be added to the composition
      */
     public void add(Cipher theCipher) {
-        //TODO complete, error checking and such i think
-
         this.ciphers.add(theCipher.newCopy());
     }
 }

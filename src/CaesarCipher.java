@@ -3,9 +3,10 @@
  *
  * This class also includes a copy constructor to create a deep copy of the current object
  *
+ * @author unknown, gave mostly complete class
  * @author Hayden Califf & Ben Obman
  * @version 1.0
- * @since 2025-11-05
+ * @since 2025-5-05
  */
 public class CaesarCipher extends Cipher{
     /**

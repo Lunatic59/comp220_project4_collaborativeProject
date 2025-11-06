@@ -1,6 +1,20 @@
-
+/**
+ * The {@code CaesarCipher} class encrypts strings or characters using a Caesar Cipher
+ *
+ * This class also includes a copy constructor to create a deep copy of the current object
+ *
+ * @author Hayden Califf & Ben Obman
+ * @version 1.0
+ * @since 2025-11-05
+ */
 public class CaesarCipher extends Cipher{
-	private final static int NUM_LETTERS = 26;
+    /**
+     * The number of letters in the English Alphabet
+     */
+    private final static int NUM_LETTERS = 26;
+    /**
+     * The amount to shift the character by during encryption and decryption
+     */
 	private final int shiftAmount;
 	
 	/**
@@ -13,7 +27,12 @@ public class CaesarCipher extends Cipher{
 	public CaesarCipher(CaesarCipher other) {
         this.shiftAmount = other.shiftAmount;
     }
-	
+
+    /**
+     * Encrypts a character using a Caesar Cipher
+     * @param c the character to encrypt
+     * @return the encrypted character
+     */
 	@Override
 	public char encrypt(char c) {
 		if(Character.isAlphabetic(c)){
@@ -26,6 +45,11 @@ public class CaesarCipher extends Cipher{
 		}
 	}
 
+    /**
+     *Decrypts a character using a Caesar Cipher
+     * @param c the character to decrypt
+     * @return the decrypted character
+     */
 	@Override
 	public char decrypt(char c) {
 		if(Character.isAlphabetic(c)){
@@ -37,6 +61,10 @@ public class CaesarCipher extends Cipher{
 		}
 	}
 
+    /**
+     *Creates a deep copy of the current object
+     * @return the deep copy of the current object
+     */
 	// Returns a new object, a deep copy of the current object
 	@Override
 	public Cipher newCopy() {

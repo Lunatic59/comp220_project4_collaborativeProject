@@ -1,16 +1,32 @@
+/**
+ * The {@code VigenereCipher} class encrypts or decrypts a string of characters using a vigenere cipher
+ *
+ * This class also includes a copy constructor to make a deep copy of the current object
+ *
+ * @Author Hayden Califf & Ben Obman
+ * @version 1.0
+ * @since 2025-11-05
+ */
+
 import java.util.ArrayList;
 
 public class VigenereCipher extends Cipher{
 	
 	private ArrayList<CaesarCipher> subCiphers;
-	
-	// These variables keep track of which
-	//  CaesarCipher to use for the next encrypt
-	//  or decrypt operation, respectively.
+
+    /**
+     * The nextIndexForEncrypt and nextIndexForDecrypt variables
+     * keep track of which CaesarCipher to use for the
+     * next encrypt or decrypt operation, respectively
+     */
 	private int nextIndexForEncrypt;
 	private int nextIndexForDecrypt;
-	
-	
+
+    /**
+     * Shifts the characters by a specified amount and then adds them to
+     * the subCiphers ArrayList
+     * @param shiftAmounts the amount to shift the characters by
+     */
 	public VigenereCipher(Iterable<Integer> shiftAmounts){
 		nextIndexForEncrypt = 0;
 		nextIndexForDecrypt = 0;
@@ -20,13 +36,24 @@ public class VigenereCipher extends Cipher{
 			subCiphers.add(new CaesarCipher(amt));
 		}
 	}
-	
+
+    /**
+     *Creates a new VigenereCipher as a copy of the specified one
+     *
+     * @param other the VigenereCipher to copy
+     */
 	public VigenereCipher(VigenereCipher other){
 		this.nextIndexForDecrypt = other.nextIndexForDecrypt;
         this.nextIndexForEncrypt = other.nextIndexForEncrypt;
         this.subCiphers = new ArrayList<>(other.subCiphers);
 	}
-	
+
+    /**
+     * Encrypts the current character in subCiphers
+     *
+     * @param c the character to encrypt
+     * @return the encrypted character
+     */
 	@Override
 	public char encrypt(char c) {
 		char res = subCiphers.get(nextIndexForEncrypt).encrypt(c);
@@ -35,6 +62,12 @@ public class VigenereCipher extends Cipher{
 		return c;
 	}
 
+    /**
+     * Decrypts the characters in subCiphers
+     *
+     * @param c the character to decrypt
+     * @return the decrypted character
+     */
 	@Override
 	public char decrypt(char c) {
 		char res = subCiphers.get(nextIndexForDecrypt).decrypt(c);
@@ -42,7 +75,11 @@ public class VigenereCipher extends Cipher{
 		return res;
 	}
 
-	// Returns a new object, a deep copy of the current object
+    /**
+     * Returns a new object, a deep copy of the current object
+     *
+     * @return a deep copy of the current object
+     */
 	@Override
 	public Cipher newCopy() {
 		return new VigenereCipher(this);

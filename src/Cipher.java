@@ -1,3 +1,16 @@
+/**
+ * The {@code Cipher} class defines the abstract structure for character based encryption and decryption
+ *
+ * Subclasses of {@code Cipher} need to implement methods of encrypting and decrypting individual characters,
+ * and provide a way to return a new instance of the cipher
+ *
+ * This class also provides concrete methods for encrypting and decrypting strings by processing each
+ * character sequentially
+ *
+ * @author Hayden Califf & Ben Obman
+ * @version 1.0
+ * @since 2025-11-05
+ */
 public abstract class Cipher {
 
     /**
